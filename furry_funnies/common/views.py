@@ -2,9 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 
-from furry_funnies.posts.models import Post
-
-from furry_funnies.furry_funnies.author.models import Author
+from furry_funnies.furry_funnies.posts.models import Post
 
 
 def index(request):
@@ -12,6 +10,6 @@ def index(request):
 
 
 class Dashboard(ListView):
-    model = Author
+    model = Post
     template_name = 'common/dashboard.html'
     context_object_name = 'posts'
